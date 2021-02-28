@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/operand_one_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/operand_two_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/operand_one_edit_text"
+        app:layout_constraintStart_toStartOf="@id/operand_one_edit_text"
+        app:layout_constraintTop_toBottomOf="@id/operand_one_edit_text" />
+
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_btn_text"
+        android:onClick="onAdd"
+        app:layout_constraintEnd_toStartOf="@+id/bt_sub"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bt_sub"
+        tools:layout_editor_absoluteY="138dp" />
+
+    <Button
+        android:id="@+id/bt_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sub_btn_text"
+        android:layout_marginTop="8dp"
+        android:onClick="onSub"
+        app:layout_constraintEnd_toStartOf="@+id/bt_mul"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_add"
+        app:layout_constraintTop_toBottomOf="@id/operand_two_edit_text"
+        tools:layout_editor_absoluteY="138dp" />
+
+    <Button
+        android:id="@+id/bt_mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multiply_btn_text"
+        android:layout_marginTop="8dp"
+        android:onClick="onMul"
+        app:layout_constraintEnd_toStartOf="@+id/bt_div"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_sub"
+        app:layout_constraintTop_toBottomOf="@id/operand_two_edit_text"
+        tools:layout_editor_absoluteY="138dp" />
+
+    <Button
+        android:id="@+id/bt_div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/divide_btn_text"
+        android:onClick="onDiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_mul"
+        app:layout_constraintTop_toTopOf="@id/bt_mul"
+        tools:layout_editor_absoluteY="138dp" />
+
+    <TextView
+        android:id="@+id/operation_result_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onDiv"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/operand_two_edit_text"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
